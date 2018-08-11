@@ -29,33 +29,33 @@ public class Main {
         }
 
         //1.
-        ArrayList<Long> result1 = new ArrayList<>(arrayListB);
+        ArrayList<Long> resultList1 = new ArrayList<>(arrayListB);
 
         for (Long aArrayListA : arrayListA) {
-            result1.remove(aArrayListA);
+            resultList1.remove(aArrayListA);
         }
 
         //2.
-        ArrayList<Long> result2 = new ArrayList<>(arrayListA);
+        ArrayList<Long> resultList2 = new ArrayList<>(arrayListA);
 
         for (Long aArrayListB : arrayListB) {
-            result2.remove(aArrayListB);
+            resultList2.remove(aArrayListB);
         }
 
         //3.
-        ArrayList<Long> result3 = new ArrayList<>();
+        ArrayList<Long> resultList3 = new ArrayList<>();
 
         for (Long aArrayListA : arrayListA) {
             if(arrayListB.contains(aArrayListA)){
-                result3.add(aArrayListA);
+                resultList3.add(aArrayListA);
             }
         }
 
         //add 3 arrayLists to returnArrayList
         ArrayList<ArrayList<Long>> returnArrayList = new ArrayList<>();
-        returnArrayList.add(result1);
-        returnArrayList.add(result2);
-        returnArrayList.add(result3);
+        returnArrayList.add(resultList1);
+        returnArrayList.add(resultList2);
+        returnArrayList.add(resultList3);
 
         return returnArrayList;
     }
