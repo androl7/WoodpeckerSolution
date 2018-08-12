@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        long[] listA = {1,2,3,4,5};
+        long[] listA = {1,2,3,4,5,5};
         long[] listB = {1,2,3,5,6,7};
 
         //print results
@@ -46,7 +46,7 @@ public class Main {
         ArrayList<Long> resultList3 = new ArrayList<>();
 
         for (Long aArrayListA : arrayListA) {
-            if(arrayListB.contains(aArrayListA)){
+            if(arrayListB.contains(aArrayListA)&&!resultList3.contains(aArrayListA)){
                 resultList3.add(aArrayListA);
             }
         }
@@ -59,6 +59,5 @@ public class Main {
 
         return returnArrayList;
     }
-
 }
 
