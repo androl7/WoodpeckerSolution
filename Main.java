@@ -50,13 +50,10 @@ public class Main {
         resultList2.removeAll(arrayListB);
 
         //3.
-        ArrayList<Long> resultList3 = new ArrayList<>();
+        ArrayList<Long> resultList3 = new ArrayList<>(arrayListA);
 
-        for (Long aArrayListA : arrayListA) {
-            if(arrayListB.contains(aArrayListA)){
-                resultList3.add(aArrayListA);
-            }
-        }
+        resultList3.retainAll(arrayListB);
+
 
         //add 3 arrayLists to returnArrayList
         ArrayList<ArrayList<Long>> returnArrayList = new ArrayList<>();
