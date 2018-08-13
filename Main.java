@@ -21,22 +21,22 @@ public class Main {
 
         //Convert Arrays to ArrayLists without duplicates
         //A
-        Set<Long> arrayListAWithoutDuplicates = new LinkedHashSet<>();
+        Set<Long> ListAWithoutDuplicates = new LinkedHashSet<>();
 
         for(long aListA:listA){
-            arrayListAWithoutDuplicates.add(aListA);
+            ListAWithoutDuplicates.add(aListA);
         }
 
-        ArrayList<Long> arrayListA = new ArrayList<>(arrayListAWithoutDuplicates);
+        ArrayList<Long> arrayListA = new ArrayList<>(ListAWithoutDuplicates);
 
         //B
-        Set<Long> arrayListBWithoutDuplicates = new LinkedHashSet<>();
+        Set<Long> ListBWithoutDuplicates = new LinkedHashSet<>();
 
         for(long aListB:listB){
-            arrayListBWithoutDuplicates.add(aListB);
+            ListBWithoutDuplicates.add(aListB);
         }
 
-        ArrayList<Long> arrayListB = new ArrayList<>(arrayListBWithoutDuplicates);
+        ArrayList<Long> arrayListB = new ArrayList<>(ListBWithoutDuplicates);
 
 
         //1.
