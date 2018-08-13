@@ -1,10 +1,12 @@
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        long[] listA = {1,2,3,4,5,5};
+        long[] listA = {1,2,3,4,4,5,5};
         long[] listB = {1,2,3,5,6,7};
 
         //print results
@@ -17,36 +19,41 @@ public class Main {
 
     private static ArrayList<ArrayList<Long>> convertLists(long[] listA, long[] listB){
 
-        //Convert Arrays to ArrayLists
-        ArrayList<Long> arrayListA = new ArrayList<>();
+        //Convert Arrays to ArrayLists without duplicates
+        //A
+        Set<Long> arrayListAWithoutDuplicates = new LinkedHashSet<>();
+
         for(long aListA:listA){
-            arrayListA.add(aListA);
+            arrayListAWithoutDuplicates.add(aListA);
         }
 
-        ArrayList<Long> arrayListB = new ArrayList<>();
+        ArrayList<Long> arrayListA = new ArrayList<>(arrayListAWithoutDuplicates);
+
+        //B
+        Set<Long> arrayListBWithoutDuplicates = new LinkedHashSet<>();
+
         for(long aListB:listB){
-            arrayListB.add(aListB);
+            arrayListBWithoutDuplicates.add(aListB);
         }
+
+        ArrayList<Long> arrayListB = new ArrayList<>(arrayListBWithoutDuplicates);
+
 
         //1.
         ArrayList<Long> resultList1 = new ArrayList<>(arrayListB);
 
-        for (Long aArrayListA : arrayListA) {
-            resultList1.remove(aArrayListA);
-        }
+        resultList1.removeAll(arrayListA);
 
         //2.
         ArrayList<Long> resultList2 = new ArrayList<>(arrayListA);
 
-        for (Long aArrayListB : arrayListB) {
-            resultList2.remove(aArrayListB);
-        }
+        resultList2.removeAll(arrayListB);
 
         //3.
         ArrayList<Long> resultList3 = new ArrayList<>();
 
         for (Long aArrayListA : arrayListA) {
-            if(arrayListB.contains(aArrayListA)&&!resultList3.contains(aArrayListA)){
+            if(arrayListB.contains(aArrayListA)){
                 resultList3.add(aArrayListA);
             }
         }
@@ -59,5 +66,6 @@ public class Main {
 
         return returnArrayList;
     }
+
 }
 
